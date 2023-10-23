@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.location {
+    margin-top: 20px;
+}
+
+.status-label {
+    margin-left: 10px;
+}
+
+/* You can add more CSS styling as needed */
