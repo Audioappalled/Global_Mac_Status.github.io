@@ -1,89 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MAC Status for Global IO MACs</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>MAC Status</title>
+  <style>
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-    <h1>MAC Status for Global IO MACs</h1>
+  <h1>MAC STATUS FOR GLOBAL IO MACS</h1>
 
-    <!-- Montreal -->
-    <h2>MONTREAL:</h2>
-    <ul>
-        <li>
-            <label for="mtlmac277">mtlmac277</label>
-            <input type="checkbox" id="mtlmac277" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-        <li>
-            <label for="mtlmac281">mtlmac281</label>
-            <input type="checkbox" id="mtlmac281" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-    </ul>
+  <h2>MONTREAL:</h2>
+  <ul>
+    <li id="mtlmac277">
+      mtlmac277:
+      <input type="radio" name="mtlmac277_status" value="available"> Available
+      <input type="radio" name="mtlmac277_status" value="in-use"> In Use
+    </li>
+    <li id="mtlmac281">
+      mtlmac281:
+      <input type="radio" name="mtlmac281_status" value="available"> Available
+      <input type="radio" name="mtlmac281_status" value="in-use"> In Use
+    </li>
+  </ul>
 
-    <!-- Vancouver -->
-    <h2>VANCOUVER:</h2>
-    <ul>
-        <li>
-            <label for="vanmac123">vanmac123</label>
-            <input type="checkbox" id="vanmac123" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-        <li>
-            <label for="sandperch">sandperch</label>
-            <input type="checkbox" id="sandperch" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-        <li>
-            <label for="Ultrafish">Ultrafish</label>
-            <input type="checkbox" id="Ultrafish" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-        <li>
-            <label for="vanmac68">vanmac68</label>
-            <input type="checkbox" id="vanmac68" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-    </ul>
+  <h2>VANCOUVER:</h2>
+  <ul>
+    <li id="vanmac123">
+      vanmac123:
+      <input type="radio" name="vanmac123_status" value="available"> Available
+      <input type="radio" name="vanmac123_status" value="in-use"> In Use
+    </li>
+    <li id="sandperch">
+      sandperch:
+      <input type="radio" name="sandperch_status" value="available"> Available
+      <input type="radio" name="sandperch_status" value="in-use"> In Use
+    </li>
+    <li id="Ultrafish">
+      Ultrafish:
+      <input type="radio" name="Ultrafish_status" value="available"> Available
+      <input type="radio" name="Ultrafish_status" value="in-use"> In Use
+    </li>
+    <li id="vanmac68">
+      vanmac68:
+      <input type="radio" name="vanmac68_status" value="available"> Available
+      <input type="radio" name="vanmac68_status" value="in-use"> In Use
+    </li>
+  </ul>
 
-    <!-- London -->
-    <h2>LONDON:</h2>
-    <ul>
-        <li>
-            <label for="velvetfish">velvetfish</label>
-            <input type="checkbox" id="velvetfish" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-        <li>
-            <label for="murraycod">murraycod</label>
-            <input type="checkbox" id="murraycod" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-        <li>
-            <label for="lonmac69">lonmac69</label>
-            <input type="checkbox" id="lonmac69" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-    </ul>
+  <h2>LONDON:</h2>
+  <ul>
+    <li id="velvetfish">
+      velvetfish:
+      <input type="radio" name="velvetfish_status" value="available"> Available
+      <input type="radio" name="velvetfish_status" value="in-use"> In Use
+    </li>
+    <li id="murraycod">
+      murraycod:
+      <input type="radio" name="murraycod_status" value="available"> Available
+      <input type="radio" name="murraycod_status" value="in-use"> In Use
+    </li>
+    <li id="lonmac69">
+      lonmac69:
+      <input type="radio" name="lonmac69_status" value="available"> Available
+      <input type="radio" name="lonmac69_status" value="in-use"> In Use
+    </li>
+  </ul>
 
-    <!-- Mumbai -->
-    <h2>MUMBAI:</h2>
-    <ul>
-        <li>
-            <label for="scabbardfish">scabbardfish</label>
-            <input type="checkbox" id="scabbardfish" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-        <li>
-            <label for="mummac97">mummac97</label>
-            <input type="checkbox" id="mummac97" class="status" checked>
-            <span class="status-label">Available</span>
-        </li>
-    </ul>
+  <h2>MUMBAI:</h2>
+  <ul>
+    <li id="scabbardfish">
+      scabbardfish:
+      <input type="radio" name="scabbardfish_status" value="available"> Available
+      <input type="radio" name="scabbardfish_status" value="in-use"> In Use
+    </li>
+    <li id="mummac97">
+      mummac97:
+      <input type="radio" name="mummac97_status" value="available"> Available
+      <input type="radio" name="mummac97_status" value="in-use"> In Use
+    </li>
+  </ul>
 
-    <button id="checkUncheckAll">Check/Uncheck All</button>
+  <script>
+    // Function to update the availability status
+    function updateStatus(macId, statusName) {
+      const macElement = document.getElementById(macId);
+      const statusRadios = document.querySelectorAll(`input[name=${statusName}]`);
 
-    <script src="script.js"></script>
+      if (statusRadios[0].checked) {
+        macElement.classList.remove("in-use");
+        macElement.classList.add("available");
+      } else {
+        macElement.classList.remove("available");
+        macElement.classList.add("in-use");
+      }
+    }
+
+    // Attach event listeners to radio buttons
+    const macs = [
+      "mtlmac277",
+      "mtlmac281",
+      "vanmac123",
+      "sandperch",
+      "Ultrafish",
+      "vanmac68",
+      "velvetfish",
+      "murraycod",
+      "lonmac69",
+      "scabbardfish",
+      "mummac97",
+    ];
+
+    macs.forEach((mac) => {
+      const availableRadio = document.querySelector(`input[name=${mac}_status][value=available]`);
+      const inUseRadio = document.querySelector(`input[name=${mac}_status][value=in-use]`);
+
+      availableRadio.addEventListener("change", () => {
+        updateStatus(mac, `${mac}_status`);
+      });
+
+      inUseRadio.addEventListener("change", () => {
+        updateStatus(mac, `${mac}_status`);
+      });
+    });
+  </script>
 </body>
 </html>
