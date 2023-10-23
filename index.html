@@ -30,134 +30,20 @@
 <body>
   <h1>MAC STATUS FOR GLOBAL I/O</h1>
 
-  <h2>MONTREAL:</h2>
-  <ul>
-    <li id="mtlmac277">
-      mtlmac277:
-      <input type="radio" name="mtlmac277_status" value="available"> Available
-      <input type="radio" name="mtlmac277_status" value="in-use"> In Use
-      <input type="text" id="mtlmac277_user" placeholder="User Name">
-    </li>
-    <li id="mtlmac281">
-      mtlmac281:
-      <input type="radio" name="mtlmac281_status" value="available"> Available
-      <input type="radio" name="mtlmac281_status" value="in-use"> In Use
-      <input type="text" id="mtlmac281_user" placeholder="User Name">
-    </li>
-  </ul>
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Embed Google Sheets</title>
+</head>
+<body>
+  <h1></h1>
 
-  <h2>VANCOUVER:</h2>
-  <ul>
-    <li id="vanmac123">
-      vanmac123:
-      <input type="radio" name="vanmac123_status" value="available"> Available
-      <input type="radio" name="vanmac123_status" value="in-use"> In Use
-      <input type="text" id="vanmac123_user" placeholder="User Name">
-    </li>
-    <li id="sandperch">
-      sandperch:
-      <input type="radio" name="sandperch_status" value="available"> Available
-      <input type="radio" name="sandperch_status" value="in-use"> In Use
-      <input type="text" id="sandperch_user" placeholder="User Name">
-    </li>
-    <li id="Ultrafish">
-      Ultrafish:
-      <input type="radio" name="Ultrafish_status" value="available"> Available
-      <input type="radio" name="Ultrafish_status" value="in-use"> In Use
-      <input type="text" id="Ultrafish_user" placeholder="User Name">
-    </li>
-    <li id="vanmac68">
-      vanmac68:
-      <input type="radio" name="vanmac68_status" value="available"> Available
-      <input type="radio" name="vanmac68_status" value="in-use"> In Use
-      <input type="text" id="vanmac68_user" placeholder="User Name">
-    </li>
-  </ul>
+  <!-- Paste the embedded Google Sheets code here -->
+  <iframe width="600" height="400" src="https://docs.google.com/spreadsheets/d/e/Your_Spreadsheet_ID/pubhtml?widget=true"></iframe>
 
-  <h2>LONDON:</h2>
-  <ul>
-    <li id="velvetfish">
-      velvetfish:
-      <input type="radio" name="velvetfish_status" value="available"> Available
-      <input type="radio" name="velvetfish_status" value="in-use"> In Use
-      <input type="text" id="velvetfish_user" placeholder="User Name">
-    </li>
-    <li id="murraycod">
-      murraycod:
-      <input type="radio" name="murraycod_status" value="available"> Available
-      <input type="radio" name="murraycod_status" value="in-use"> In Use
-      <input type="text" id="murraycod_user" placeholder="User Name">
-    </li>
-    <li id="lonmac69">
-      lonmac69:
-      <input type="radio" name="lonmac69_status" value="available"> Available
-      <input type="radio" name="lonmac69_status" value="in-use"> In Use
-      <input type="text" id="lonmac69_user" placeholder="User Name">
-    </li>
-  </ul>
+</body>
+</html>
 
-  <h2>MUMBAI:</h2>
-  <ul>
-    <li id="scabbardfish">
-      scabbardfish:
-      <input type="radio" name="scabbardfish_status" value="available"> Available
-      <input type="radio" name="scabbardfish_status" value="in-use"> In Use
-      <input type="text" id="scabbardfish_user" placeholder="User Name">
-    </li>
-    <li id="mummac97">
-      mummac97:
-      <input type="radio" name="mummac97_status" value="available"> Available
-      <input type="radio" name="mummac97_status" value="in-use"> In Use
-      <input type="text" id="mummac97_user" placeholder="User Name">
-    </li>
-  </ul>
-
-  <script>
-    // Function to update the availability status
-    function updateStatus(macId, statusName) {
-      const macElement = document.getElementById(macId);
-      const statusRadios = document.querySelectorAll(`input[name=${statusName}]`);
-      const userField = document.getElementById(`${macId}_user`);
-
-      if (statusRadios[0].checked) {
-        macElement.classList.remove("in-use");
-        macElement.classList.add("available");
-        userField.style.display = "none"; // Hide user field when available
-      } else {
-        macElement.classList.remove("available");
-        macElement.classList.add("in-use");
-        userField.style.display = "inline"; // Show user field when in use
-      }
-    }
-
-    // Attach event listeners to radio buttons
-    const macs = [
-      "mtlmac277",
-      "mtlmac281",
-      "vanmac123",
-      "sandperch",
-      "Ultrafish",
-      "vanmac68",
-      "velvetfish",
-      "murraycod",
-      "lonmac69",
-      "scabbardfish",
-      "mummac97",
-    ];
-
-    macs.forEach((mac) => {
-      const availableRadio = document.querySelector(`input[name=${mac}_status][value=available]`);
-      const inUseRadio = document.querySelector(`input[name=${mac}_status][value=in-use]`);
-      const userField = document.getElementById(`${mac}_user`);
-
-      availableRadio.addEventListener("change", () => {
-        updateStatus(mac, `${mac}_status`);
-      });
-
-      inUseRadio.addEventListener("change", () => {
-        updateStatus(mac, `${mac}_status`);
-      });
-    });
   </script>
 </body>
 </html>
